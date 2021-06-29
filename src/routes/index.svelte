@@ -1,10 +1,21 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { authStore, signInWithGoogle, signOut } from '$lib/firebase/core';
+
+	let user;
+
+	authStore.subscribe((v) => {
+		user = v;
+	});
+</script>
+
+<h1>Authentication stuff</h1>
+<p>{user?.displayName}</p>
+
+<button on:click={() => signInWithGoogle()}>G sign in</button>
+<button on:click={() => signOut()}>sign out</button>
 
 <style lang="scss">
 	p {
-		a {
-			background-color: rgba(255, 166, 0, 0.404);
-		}
+		background-color: rgba(255, 166, 0, 0.404);
 	}
 </style>
