@@ -43,6 +43,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"firebase": "^8.6.8"
+		"firebase": "^8.6.8",
+		"firebaseui": "^4.8.0"
 	}
 }
