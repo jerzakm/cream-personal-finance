@@ -13,7 +13,8 @@ const config = {
 			pages: 'public',
 			assets: 'public',
 			fallback: 'index.html'
-		})
+		}),
+		ssr: false
 	}
 };
 
