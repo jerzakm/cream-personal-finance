@@ -1,10 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { authStore, signOut } from '$lib/firebase/core';
 
-<style lang="scss">
-	p {
-		a {
-			background-color: rgba(255, 166, 0, 0.404);
-		}
-	}
-</style>
+	let user;
+
+	authStore.subscribe((v) => {
+		user = v;
+	});
+</script>
+
+<h1>Authentication stuff</h1>
+<p>{user?.displayName}</p>
+<button on:click={() => signOut()}>sign out</button>
