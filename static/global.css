@@ -73,4 +73,7 @@ body {
   color: var(--text-color);
   font-family: 'Montserrat';
   font-weight: 500;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

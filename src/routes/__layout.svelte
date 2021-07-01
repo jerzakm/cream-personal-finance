@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import Sidebar from '$lib/components/Sidebar.svelte';
 
 	import { authStore } from '$lib/firebase/core';
 	import { onMount } from 'svelte';
@@ -16,4 +17,20 @@
 	});
 </script>
 
-<slot />
+<layout>
+	<Sidebar />
+	<slot />
+	<div class="test" />
+</layout>
+
+<style lang="scss">
+	layout {
+		// position: relative;
+		display: flex;
+		align-items: flex-start;
+		.test {
+			// position: relative;
+			min-height: 3000px;
+		}
+	}
+</style>
