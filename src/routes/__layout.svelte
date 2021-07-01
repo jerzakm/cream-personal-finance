@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../styles/tailwind-output.css';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Sidebar from '$lib/components/Sidebar.svelte';
