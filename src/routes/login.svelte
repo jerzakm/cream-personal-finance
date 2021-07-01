@@ -1,7 +1,6 @@
 <script lang="ts">
 	import * as firebaseui from 'firebaseui';
 	import 'firebaseui/dist/firebaseui.css';
-	import { auth, signInWithGoogle } from '$lib/firebase/core';
 	import { onMount } from 'svelte';
 	import firebase from 'firebase';
 

@@ -5,16 +5,14 @@
 	import { authStore } from '$lib/firebase/core';
 	import { onMount } from 'svelte';
 
-	let mounted = false;
-
-	onMount(() => (mounted = true));
-
-	authStore.subscribe((u) => {
-		// redirects for auth status changes
-		if (mounted) {
+	onMount(() => {
+		authStore.subscribe((u) => {
+			// if (mounted) {
+			console.log(u);
 			if (!u) goto('/login');
 			if (u && $page.path == '/login') goto('/');
-		}
+			// }
+		});
 	});
 </script>
 
